@@ -45,7 +45,7 @@ app.set("view engine","ejs")
 app.set("views",path.resolve("./views"))
 
 //app listening
-let port=process.env.PORT || 3000
+let port=process.env.PORT || 8000
 
 app.listen(port, () => {
   console.log(`Your app listening on port ${port}`)
