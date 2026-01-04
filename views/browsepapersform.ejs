@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Papers</title>
+
+    <!-- Bootstrap CSS -->
+    <%- include("./partials/head") %>
+</head>
+
+<body class="bg-light">
+    <%- include("./partials/nav") %>
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <div class="card shadow-lg p-4" style="max-width: 450px; width: 100%;">
+
+                <h4 class="text-center mb-4 text-secondary">
+                    Papers Search
+                </h4>
+
+ <form action="/form/browsepapers" method="post">
+
+            <!-- Year of Engineering -->
+            <div class="mb-3">
+                <label class="form-label text-secondary small fw-semibold">
+                    Year of Engineering
+                </label>
+                <select name="year" class="form-select form-select-sm">
+                    <option selected disabled>Select Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+            </div>
+
+            <!-- Subjects -->
+            <div class="mb-3">
+                <label for="inputEmail4" class="form-label text-secondary small fw-semibold">
+                    Subject
+                </label>
+                <input 
+                    type="text" 
+                    class="form-control form-control-sm" 
+                    id="inputEmail4"
+                    placeholder="Enter subject"
+                    name="subject"
+                    autocomplete="off">
+            </div>
+            
+            <div class="d-grid">
+                <button type="submit" class="btn btn-dark btn-sm">
+                    Submit
+                </button>
+            </div>
+
+        </form>
+
+
+            </div>
+        </div>
+        <%- include("./partials/script") %>
+</body>
+
+</html>
+
+

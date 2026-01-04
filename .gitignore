@@ -1,0 +1,74 @@
+# Dependencies
+node_modules/
+package-lock.json 
+
+# Environment Variables (IMPORTANT - Never commit these!)
+.env
+.env.local
+.env.production
+.env.development
+
+# Uploaded Files (if using local storage - not needed with Cloudinary)
+
+
+# Database
+*.sqlite
+*.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE/Editor Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build/Distribution
+dist/
+build/
+.next/
+out/
+
+# Temporary Files
+*.tmp
+.cache/
+.temp/
+
+# Deployment Platform Files
+.vercel
+.railway
+.cyclic
+.netlify
+.render
+.koyeb
+
+# Optional - Uncomment if needed
+# .eslintcache
+# .npm
+# .yarn

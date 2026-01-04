@@ -1,0 +1,143 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body"  data-bs-theme="dark" >
+    <div class="container-fluid">
+        <img src="/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+        <a class="navbar-brand" href="/">PYQ-HUB</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link scroll-link" data-target="about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link scroll-link" data-target="contactus">
+                        Contact Us
+                    </a>
+                </li>
+                <% if (locals.admin) { %>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            kapil dharme
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/admin/show-paper">Show All Paper</a></li>
+                            <li><a class="dropdown-item" href="/admin/add-paper">Add Paper</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/admin/adminLogout">Logout</a></li>
+                        </ul>
+                    </li>
+
+
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/form/adminLogin">Admin Login</a>
+                        </li>
+                        <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<% if (locals.error) { %>
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="error">
+        <%= locals.error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
+        <% if (locals.success) { %>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="success">
+                <%= locals.success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+
+                <!-- automatic disappering alert -->
+                <script>
+                    setTimeout(() => {
+                        document.querySelectorAll('.alert .btn-close').forEach(btn => btn.click());
+                    }, 1500);
+                </script>
+                <!-- active navlink -->
+                <script>
+                    // Get all nav links
+                    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+                    // Get current URL path
+                    const currentPath = window.location.pathname;
+
+                    // On page load, set active based on localStorage or current path
+                    window.addEventListener('DOMContentLoaded', function () {
+                        const savedActive = localStorage.getItem('activeNavLink');
+
+                        if (savedActive) {
+                            // Set active from localStorage
+                            navLinks.forEach(link => {
+                                link.classList.remove('active');
+                                if (link.textContent.trim() === savedActive || link.getAttribute('href') === savedActive) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        } else {
+                            // Set active based on current URL
+                            navLinks.forEach(link => {
+                                link.classList.remove('active');
+                                const href = link.getAttribute('href');
+                                if (href === currentPath || (currentPath === '/' && link.textContent.trim() === 'Home')) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+
+                    // Add click event to each nav link
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', function (e) {
+                            // Remove active class from all links
+                            navLinks.forEach(nav => nav.classList.remove('active'));
+
+                            // Add active class to clicked link
+                            this.classList.add('active');
+
+                            // Save to localStorage
+                            const linkText = this.textContent.trim();
+                            const linkHref = this.getAttribute('href');
+
+                            // Save the link text or href
+                            if (linkHref && linkHref !== '#') {
+                                localStorage.setItem('activeNavLink', linkHref);
+                            } else {
+                                localStorage.setItem('activeNavLink', linkText);
+                            }
+                        });
+                    });
+
+                    // Handle dropdown items
+                    const dropdownItems = document.querySelectorAll('.dropdown-item');
+                    dropdownItems.forEach(item => {
+                        item.addEventListener('click', function () {
+                            // Remove active from all nav links
+                            navLinks.forEach(nav => nav.classList.remove('active'));
+
+                            // Add active to the parent dropdown toggle
+                            const dropdownToggle = this.closest('.nav-item').querySelector('.dropdown-toggle');
+                            if (dropdownToggle) {
+                                dropdownToggle.classList.add('active');
+                                localStorage.setItem('activeNavLink', 'kapil dharme');
+                            }
+                        });
+                    });
+                </script>

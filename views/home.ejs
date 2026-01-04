@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head") %>
+        <title>Home</title>
+</head>
+
+<body>
+    <%- include("./partials/nav") %>
+        <!-- carousel for home page -->
+        <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel"
+            data-bs-interval="5000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner" data-bs-interval="5000">
+                <div class="carousel-item active">
+                    <img src="/img1.jpg" class="d-block w-100"
+                        style="height: 400px; object-fit: cover; object-position: center;" alt="/img1.jpg">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h5>Access All Previous Years Papers</h5>
+                            <p class="opacity-75">Get all your exam papers in one place</p>
+                            <a href="/form/browsepapers" class=" btn btn-warning btn-sm">Browse Papers</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="/img2.jpg" class="d-block w-100"
+                        style="height: 400px; object-fit: cover; object-position: center;" alt="img2.jpg">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h5>Prepare Smarter, Not Harder</h5>
+                            <p class="opacity-75">Practice with real previous year questions</p>
+                            <a href="/form/browsepapers" class=" btn btn-warning btn-sm">Browse Papers</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="/img3.jpg" class="d-block w-100"
+                        style="height: 400px; object-fit: cover; object-position: center;" alt="img3.jpg">
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h5>Your Exam Success Starts Here</h5>
+                            <p class="opacity-75">Free downloads for all subjects and years</p>
+                            <a href="/form/browsepapers" class=" btn btn-warning btn-sm">Browse Papers</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- about page -->
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" id="about">
+            <div class="my-3 p-3">
+                <h2 class="display-5 mb-4">About PYQ-HUB</h2>
+                <p class="lead">Your one-stop destination for Previous Year Question papers</p>
+            </div>
+            <div class="bg-body-secondary shadow-sm mx-auto p-4"
+                style="width: 80%; min-height: 300px; border-radius: 21px 21px 0 0;">
+                <div class="row text-start">
+                    <div class="col-md-6 mb-4">
+                        <h4 class="text-warning">Our Mission</h4>
+                        <p>PYQ-HUB is dedicated to helping students excel in their exams by providing easy access to
+                            previous year question papers. We believe that practicing with real exam papers is the key
+                            to understanding exam patterns and boosting confidence.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h4 class="text-warning">What We Offer</h4>
+                        <ul class="list-unstyled">
+                            <li>✓ Comprehensive collection of previous year papers</li>
+                            <li>✓ Papers across multiple subjects and years</li>
+                            <li>✓ Easy search and download functionality</li>
+                            <li>✓ Completely free access for all students</li>
+                            <li>✓ Regular updates with latest papers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <p class="text-muted fst-italic">We're constantly working to expand our collection and make exam
+                            preparation easier for students everywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- contact page -->
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" id="contactus">
+            <div class="my-3 p-3">
+                <h2 class="display-5 mb-4">Contact Us</h2>
+                <p class="lead">Have questions or suggestions? We'd love to hear from you!</p>
+            </div>
+            <div class="bg-body-secondary shadow-sm mx-auto p-4"
+                style="width: 80%; min-height: 300px; border-radius: 21px 21px 0 0;">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="mb-4 text-start">
+                            <h5 class="text-warning mb-3">Get In Touch</h5>
+
+                            <div class="mb-3">
+                                <strong>📧 Email:</strong>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pyqhub143@gmail.com&su=PYQ-HUB%20Inquiry"
+                                    target="_blank" class="ms-2 text-decoration-none">pyqhub143@gmail.com</a>
+                            </div>
+
+                            <div class="mb-3">
+                                <strong>📍 Location:</strong>
+                                <span class="ms-2">Amravati, Maharashtra, India</span>
+                            </div>
+
+                            <div class="mb-3">
+                                <strong>🕒 Support:</strong>
+                                <span class="ms-2">24/7 Online Support</span>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-start mb-4">
+                            <h6 class="text-warning mb-3">Contact us for:</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-2">📝 Submit new question papers</p>
+                                    <p class="mb-2">🐛 Report broken links</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="mb-2">💡 Share suggestions</p>
+                                    <p class="mb-2">❓ General inquiries</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pyqhub143@gmail.com&su=PYQ-HUB%20Inquiry"
+                                target="_blank" class="btn btn-warning btn-sm">Send us an Email</a>
+                        </div>
+
+                        <p class="text-muted mt-4 small">We typically respond within 24-48 hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-body-tertiary py-5 mt-5 border-top" data-bs-theme="dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-3 mb-4">
+                        <img src="/logo.png" alt="PYQ-HUB Logo" width="40" height="32" class="d-block mb-3">
+                        <h5 class="text-warning">PYQ-HUB</h5>
+                        <p class="text-muted small">Your trusted source for engineering previous year question papers.
+                            Helping students prepare smarter, not harder.</p>
+                        <small class="d-block text-body-secondary">© 2024–2025 PYQ-HUB</small>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-4">
+                        <h5 class="text-warning mb-3">Quick Links</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/">Home</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/form/browsepapers">Browse
+                                    Papers</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none scroll-link" href="#"
+                                    data-target="about">About Us</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none scroll-link" href="#"
+                                    data-target="contactus">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-3 mb-4">
+                        <h5 class="text-warning mb-3">Available Papers</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/form/browsepapers">First
+                                    Year (All Branches)</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none"
+                                    href="/form/browsepapers">Computer Science</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/form/browsepapers">Second
+                                    Year CSE</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/form/browsepapers">Third
+                                    Year CSE</a></li>
+                            <li class="mb-2"><a class="text-body text-decoration-none" href="/form/browsepapers">Final
+                                    Year CSE</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-md-3 mb-4">
+                        <h5 class="text-warning mb-3">Contact Info</h5>
+                        <ul class="list-unstyled text-small">
+                            <li class="mb-2">
+                                <span class="text-muted">📧 Email:</span><br>
+                                <a class="text-body text-decoration-none"
+                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=pyqhub143@gmail.com&su=PYQ-HUB%20Inquiry"
+                                    target="_blank">pyqhub143@gmail.com</a>
+                            </li>
+                            <li class="mb-2">
+                                <span class="text-muted">📍 Location:</span><br>
+                                <span class="text-body">Amravati, Maharashtra</span>
+                            </li>
+                            <li class="mb-2">
+                                <span class="text-muted">🕒 Support:</span><br>
+                                <span class="text-body">24/7 Available</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <img src="/profilephoto.png" alt="Kapil Dharme" class="rounded-circle mb-2" width="80"
+                            height="80" style="object-fit: contain;">
+                        <p class="mb-1">
+                            <small class="text-muted">Created by </small>
+                            <strong class="text-body">Kapil Dharme</strong>
+                        </p>
+                        <div class="d-flex justify-content-center gap-3 mb-2">
+                            <a href="https://www.linkedin.com/in/kapil-dharme-a52a1336a/" target="_blank" class="text-body text-decoration-none" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/Kapil-dharme " target="_blank" class="text-body text-decoration-none" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                    viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr class="border-secondary my-4">
+
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <small class="text-muted">Made with ❤️ for Engineering Students | All Rights Reserved</small>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="text-body text-decoration-none me-3 small">Privacy Policy</a>
+                        <a href="#" class="text-body text-decoration-none me-3 small">Terms of Service</a>
+                        <a href="#" class="text-body text-decoration-none small">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <%- include("./partials/script") %>
+</body>
+
+</html>
