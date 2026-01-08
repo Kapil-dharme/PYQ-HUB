@@ -13,7 +13,7 @@ router.post("/browsepapers", async (req, res) => {
     let { year, subject } = req.body
     try {
         if (!subject || !year) {
-           return res.render("browsepapersform", {
+            return res.render("browsepapersform", {
                 error: "Please fill out the details."
             })
         }
@@ -63,6 +63,11 @@ router.post('/adminLogin', async (req, res) => {
                 //send token via cookie and Redirect to admin dashboard
                 return res.cookie('token', token).redirect('/?success=You logged in successfully.')
 
+            }
+            else {
+                return res.render('adminloginform', {
+                    error: "Invalid Credentials"
+                });
             }
         } catch (error) {
             return res.render('adminloginform', {
