@@ -39,17 +39,6 @@ admin:req.admin,
 app.use("/form",formroute)
 app.use("/admin",isAdmin,paperroute)
 
-//handling file limit error
-app.use((err, req, res, next) => {
-  if (err.code === 'LIMIT_FILE_SIZE') {
-    return res.render("addpaper", { 
-      error: "File is too large! Max limit is 10MB." 
-    });
-  }
-  // If it's a different error, pass it along
-  next(err);
-});
-
 //setting the view engine
 app.set("view engine","ejs")
 app.set("views",path.resolve("./views"))

@@ -43,43 +43,56 @@ const upload = multer({
     if (file.mimetype === "application/pdf") {
       cb(null, true);
     } else {
-      req.fileValidationError="Only pdf's are allowed."
+      req.fileValidationError = "Only pdf's are allowed."
       cb(null, false);
     }
   }
 });
 
-router.post("/add-paper", upload.single("file"), async (req, res) => {
-  try {
-    let { year, subject } = req.body
-    if(req.fileValidationError){
-      return res.render("addpaper",{
-        error:req.fileValidationError
-      })
-    }
-    if (!year || !subject || !req.file) {
+router.post("/add-paper", (req, res) => {
+  upload.single("file")(req, res, async (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.render("addpaper", {
+          error: "File is too large! Max limit is 10MB."
+        });
+      }
       return res.render("addpaper", {
-        error: "Please fill all details"
+        error: "Upload failed: " + err.message
+      });
+    }
+
+    try {
+      let { year, subject } = req.body
+      if (req.fileValidationError) {
+        return res.render("addpaper", {
+          error: req.fileValidationError
+        })
+      }
+      if (!year || !subject || !req.file) {
+        return res.render("addpaper", {
+          error: "Please fill all details"
+        })
+      }
+      subject = subject.toLowerCase().trim();
+      await Paper.create({
+        year: year,
+        subject: subject,
+        fileUrl: req.file.path,
+        publicId: req.file.filename,
+      })
+
+      return res.render("addpaper", {
+        success: "Paper uploaded successfully",
+        fileUrl: req.file.path
+      });
+
+    } catch (err) {
+      return res.render("addpaper", {
+        error: "Upload Failed"
       })
     }
-    subject = subject.toLowerCase().trim();
-    await Paper.create({
-      year: year,
-      subject: subject,
-      fileUrl: req.file.path,
-      publicId: req.file.filename,
-    })
-
-    return res.render("addpaper", {
-      success: "Paper uploaded successfully",
-      fileUrl: req.file.path
-    });
-
-  } catch (err) {
-    return res.render("addpaper", {
-      error: "Upload Failed"
-    })
-  }
+  });
 });
 
 //managing get request for show all paper
